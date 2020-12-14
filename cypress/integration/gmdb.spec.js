@@ -8,17 +8,33 @@ describe("Home page", () => {
         cy.get('.navBar').should('contain', 'Home')
         cy.get('.navBar').should('contain', 'Login')
         cy.get('.navBar').should('contain', 'Search')
-      })
+    })
 
-      it("should see a list of movies by their poster image", () =>{
-          cy.get('div[class="main-page"]').find('img').should('be.visible');
-      })
+    it("should see a list of movies by their poster image", () =>{
+        cy.get('div[class="main-page"]').find('img').should('be.visible');
+    })
 
-      it("should see image sizes to be 225pxWidth by 350pxHeight", () => {
-          cy.get('div[class="main-page"]').get('img').invoke('height').should('eq', 350)
-          cy.get('div[class="main-page"]').get('img').invoke('width').should('eq', 225)
-      })
+    it("should see image sizes to be 225pxWidth by 350pxHeight", () => {
+        cy.get('div[class="main-page"]').get('img').invoke('height').should('eq', 350)
+        cy.get('div[class="main-page"]').get('img').invoke('width').should('eq', 225)
+    })
+
+    it("should fetch data", () => {
+        cy.
+    //     cy.visit('http://localhost:3001', {
+    //         onBeforeLoad (win) {
+    //             cy.stub(win, 'fetch').withArgs('/movies')
+    //             .resolves({
+    //                 ok: true,
+    //                 json: () => [],
+    //             })
+    //         }
+    //     })
+    // })
+
+    // it("should link port 3001, and fetch data(poster)", () =>{
+
+    // })
 
   })
 
-  

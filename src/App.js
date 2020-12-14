@@ -1,29 +1,46 @@
-import React from "react";
+import React, { Component } from "react";
 import "./App.css";
 import MovieImg from "./components/MovieImg";
 
-function App() {
-  return (
-    <div className="App">
-      {/* Header */}
-      <header className="navBar">
-        <c>GMDB</c>
-        <a className="active" href="">
-          Home
-        </a>
-        <a href="">Login</a>
-        <div class="search-container">
-          <input type="text" placeholder="Search" id="Search" />
-          <button type="SearchButton">Search</button>
-        </div>
-      </header>
+class App extends Component{
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: "this is the name",
+    };
+  }
 
-      {/* Home */}
-      <div className="main-page">
-        <MovieImg />
+  fetchData = () => {
+    fetchMock.mock('http://example.com', 200);
+    const res = await fetch('http://example.com');
+    assert(res.ok);
+    fetchMock.restore();
+  }
+
+  render() {
+    return (
+      <div className="App">
+        {/* Header */}
+        <header className="navBar">
+          <c>GMDB</c>
+          <a className="active" href="a">
+            Home
+          </a>
+          <a href="a">Login</a>
+          <div class="search-container">
+            <input type="text" placeholder="Search" id="Search" />
+            <button type="SearchButton">Search</button>
+          </div>
+        </header>
+        {/* Home */}
+        <div className="main-page">
+          <MovieImg />
+        </div>
+        {/* FetchData */}
+        { fetchData }
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default App;
