@@ -19,8 +19,8 @@ describe("Home page", () => {
         cy.get('div[class="main-page"]').get('img').invoke('width').should('eq', 225)
     })
 
-    it("should fetch data", () => {
-        cy.
+    // it("should fetch data", () => {
+    //     cy.
     //     cy.visit('http://localhost:3001', {
     //         onBeforeLoad (win) {
     //             cy.stub(win, 'fetch').withArgs('/movies')
@@ -35,6 +35,3 @@ describe("Home page", () => {
     // it("should link port 3001, and fetch data(poster)", () =>{
 
     // })
-
-  })
-

@@ -12,7 +12,7 @@ class App extends Component{
 
   fetchData = () => {
     fetchMock.mock('http://example.com', 200);
-    const res = await fetch('http://example.com');
+    const res = fetch('http://example.com');
     assert(res.ok);
     fetchMock.restore();
   }
@@ -37,8 +37,8 @@ class App extends Component{
           <MovieImg />
         </div>
         {/* FetchData */}
-        { fetchData }
-      </div>
+        { this.fetchData }
+        </div>
     );
   }
 }
